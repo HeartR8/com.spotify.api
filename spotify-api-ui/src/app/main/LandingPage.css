@@ -1,0 +1,207 @@
+.landing-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url(./img/landing-background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+
+.background-text{
+    position: absolute;
+    top: 10%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 50px 100px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------scroll bar-------------------------*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px whitesmoke;
+    background-color: rgba(83, 83, 83, 0.7);
+
+}
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+/* ---------------------.scroll bar-------------------------*/
+
+.user-check{
+    width: 7em;
+    height: 7em;
+    background-size: cover;
+    border: none;
+}
+
+.title {
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 0;
+    color: whitesmoke;
+    text-decoration: underline;
+    font-size: 700%;
+}
+
+.title:hover{
+    cursor: pointer;
+}
+
+.tagLine {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 200%;
+    margin-bottom: 2em;
+}
+
+.button-landing {
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 15em;
+    font-size: 125%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 2em;
+    padding: .8em 1em calc(.8em + 3px);
+    background: rgba(120, 120, 120, 0.7);
+    box-shadow: 0 -3px 5px rgba(120, 120, 120, 0.7) inset;
+    transition: 0.2s;
+    border: none;
+}
+
+.button-landing:hover {
+    background: rgba(147, 147, 147, 0.7);
+    cursor: pointer;
+}
+
+.button-landing:active {
+    background: rgb(194, 194, 194);
+    box-shadow: 0 3px rgb(196, 196, 196) inset;
+}
+
+.button-landing:focus {
+    outline: none;
+}
+
+.button-confirm {
+    display: block;
+    margin: 1em auto 1em auto;
+    width: 15em;
+    font-size: 125%;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 2em;
+    padding: .8em 1em calc(.8em + 3px);
+    background: rgba(41, 88, 229, 0.7);
+    box-shadow: 0 -3px 5px rgba(41, 88, 229, 0.7) inset;
+    transition: 0.2s;
+    border: none;
+}
+
+.button-confirm:hover {
+    background: #2958E5;
+    cursor: pointer;
+}
+
+.button-confirm:active {
+    background: rgb(194, 194, 194);
+    box-shadow: 0 3px rgb(196, 196, 196) inset;
+}
+
+.button-confirm:focus {
+    outline: none;
+}
+
+.inputs-login {
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 15em;
+    font-size: 125%;
+    padding: 10px 10px 10px 30px;
+    border: none;
+    font-weight: 700;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 2em;
+    background: rgba(0, 106, 146, 0.7);
+    box-shadow: 0 -3px 5px rgba(0, 106, 146, 0.7) inset;
+    transition: 0.2s;
+}
+
+.inputs-login:focus {
+    outline: none;
+}
+
+.inputs-login::placeholder {
+    color: #cdcdcd;
+}
+
+.inputs-login[type="password"]::-ms-reveal {
+    background: #c00;
+    color: #fff;
+}
+
+
+.inputs-register {
+    display: block;
+    margin: 0.2em auto 1em auto;
+    width: 15em;
+    font-size: 125%;
+    border-color: black;
+    border-bottom-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+    background: transparent;
+    transition: 0.2s;
+}
+
+.inputs-register:focus {
+    outline: none;
+}
+
+.inputs-register::placeholder {
+    color: #535353;
+}
+
+.triangle-down {
+    display: block;
+    margin: 2em auto;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-top: 80px solid #3d3d3d;
+}
+
+.mycheckbox {
+    display: block;
+    width: 30em;
+    margin: 0 auto;
+}
+
+.almost-done-message {
+    display: block;
+    width: 40em;
+    height: 20em;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+    background: rgba(256, 256, 256, 0.6);
+}
