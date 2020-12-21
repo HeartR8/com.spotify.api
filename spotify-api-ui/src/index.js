@@ -13,7 +13,6 @@ ReactDOM.render(
             <Switch>
                 <Route exact path={"/login"} component={Authorization}/>
                 <Route exact path={"/"} component={SpotifyApp}/>
-                {/*<SpotifyApp />*/}
             </Switch>
         </Router>
     </React.StrictMode>,

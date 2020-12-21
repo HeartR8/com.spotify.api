@@ -2,6 +2,7 @@ import {useHistory} from "react-router-dom";
 import {ErrorMessage, Form, Formik} from "formik";
 // import LandingDataService from "../../ServerREST/Landing";
 import React, {useState} from "react";
+import "./SpotifyApp.css";
 
 function Authorization() {
     const history = useHistory();
@@ -51,7 +52,7 @@ function Authorization() {
                         (props) => (
                             <Form>
                                 <ErrorMessage name="description" component="div"/>
-                                <div style={{width: '20%', left: '40%', position: 'absolute', top: '40%'}}>
+                                <div className={"authorizationBlock"}>
                                     <input className={"form-control"}
                                            type="text"
                                            name={"name"}
