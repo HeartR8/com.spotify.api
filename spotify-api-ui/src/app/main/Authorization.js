@@ -4,45 +4,38 @@ import {ErrorMessage, Form, Formik} from "formik";
 import React, {useState} from "react";
 import "./SpotifyApp.css";
 
+export function getUser(){
+    let user1 = {
+        name: 'user',
+        password: 'user'
+    }
+
+    return user1;
+}
+
 function Authorization() {
     const history = useHistory();
 
-    const [testConnection, setTestConnection] = useState("___");
+    const [testUser, setTestUser] = useState("Enter user");
 
     return (
         <div>
-            <div style={{position: 'absolute', margin: '1em 1em 0 0'}} onClick={() => {
-                // LandingDataService.tryConnection().then(
-                //     response => {
-                //         if (response.data === "OK") {
-                //             console.log(testConnection);
-                //             setTestConnection("all good");
-                //         } else {
-                //             console.log(testConnection);
-                //             setTestConnection(" problems with server");
-                //         }
-                //     }
-                // ).catch((err) => {
-                //     console.error(err);
-                //     console.log(err);
-                //     setTestConnection("no connection");
-                // });
-            }}></div>
             <div style={{marginTop: '4em'}}>
                 <Formik
                     initialValues={{name: '', password: ''}}
                     onSubmit={
                         (values) => {
-                        // LandingDataService.tryLoginUser(values).then(
-                        //     response => {
-                        //         if (response.data === "Success") {
-                        //             console.log("login successes");
+                            let u = getUser();
+                            if (values.name === u.name) {
+                                if (values.password === u.password) {
+                                    setTestUser("Success");
                                     history.push('/');
-                            //     } else {
-                            //         console.log("wrong user");
-                            //     }
-                            // }
-                        // );
+                                } else {
+                                    setTestUser("Wrong password");
+                                }
+                            } else {
+                                setTestUser("Wrong user");
+                            }
                         }
                     }
                     validateOnChange={false}
@@ -51,8 +44,10 @@ function Authorization() {
                     {
                         (props) => (
                             <Form>
-                                <ErrorMessage name="description" component="div"/>
                                 <div className={"authorizationBlock"}>
+                                    <label style={{marginLeft: 'auto'}}>
+                                        {testUser}
+                                    </label>
                                     <input className={"form-control"}
                                            type="text"
                                            name={"name"}
@@ -64,7 +59,9 @@ function Authorization() {
                                            name={"password"}
                                            placeholder={"пароль"}
                                            onChange={props.handleChange}/>
-                                    <button style={{width: '100%', marginTop: '10px'}} className={"btn btn-default"} type="submit">Войти</button>
+                                    <button style={{width: '100%', marginTop: '10px'}} className={"btn btn-default"}
+                                            type="submit">Войти
+                                    </button>
                                 </div>
 
                             </Form>
@@ -77,3 +74,4 @@ function Authorization() {
 }
 
 export default Authorization
+
