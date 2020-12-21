@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/com.spotify.api (1) (com.spotify.api).iml" filepath="$PROJECT_DIR$/com.spotify.api (1) (com.spotify.api).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spotify-api-server/com.spotify.api (2) (org.springframework.boot).iml" filepath="$PROJECT_DIR$/spotify-api-server/com.spotify.api (2) (org.springframework.boot).iml" />
+    </modules>
+  </component>
+</project>

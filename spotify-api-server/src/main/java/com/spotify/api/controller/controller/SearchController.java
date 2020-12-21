@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
+import java.text.ParseException;
 
 import static org.apache.http.HttpHeaders.USER_AGENT;
 
@@ -28,6 +30,8 @@ public class SearchController {
 
     @Value("${token}")
     private String token;
+    
+
 
     @PostMapping(value = "/api")
     public StringBuffer searchQ(@RequestBody SearchModel search) throws IOException {
