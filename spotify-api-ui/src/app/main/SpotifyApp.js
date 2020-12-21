@@ -9,7 +9,6 @@ import Limit from "../limit/Limit";
 import RequestUtils from "../../utils/RequestUtils";
 import "./SpotifyApp.css";
 import {useHistory} from "react-router-dom";
-import getUser from './Authorization';
 import {useSelector} from "react-redux";
 
 function LoginButton() {
@@ -18,10 +17,24 @@ function LoginButton() {
 
     return (
         <div style={{position: "absolute", width: '10em', margin: '0.5em 40%'}}>
-            <button onClick={() => {
+            <button className={"btn btn-default"} onClick={() => {
                 history.push('/login');
             }}>
                 {user_name}
+            </button>
+        </div>
+    );
+}
+
+function ToNewsButton() {
+    const history = useHistory();
+
+    return (
+        <div style={{position: "absolute", width: '10em', margin: '0.5em 50%'}}>
+            <button className={"btn btn-default"} onClick={() => {
+                history.push('/news');
+            }}>
+                News
             </button>
         </div>
     );
@@ -47,6 +60,7 @@ export default class SpotifyApp extends Component {
 
         return (<Col className="appContainer">
                 <LoginButton/>
+                <ToNewsButton/>
                 <Row>
                     <Col sm={4} style={{marginBottom: 20}}>
                         <Input loading={this.state.loading} query={this.__q} onChange={this.handleChange}/>
