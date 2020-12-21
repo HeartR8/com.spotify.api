@@ -1,13 +1,32 @@
 import {useHistory} from "react-router-dom";
 import {ErrorMessage, Form, Formik} from "formik";
 // import LandingDataService from "../../ServerREST/Landing";
-import React from "react";
+import React, {useState} from "react";
 
 function Authorization() {
     const history = useHistory();
 
+    const [testConnection, setTestConnection] = useState("___");
+
     return (
-        <div className={"landing-background"}>
+        <div>
+            <div style={{position: 'absolute', margin: '1em 1em 0 0'}} onClick={() => {
+                // LandingDataService.tryConnection().then(
+                //     response => {
+                //         if (response.data === "OK") {
+                //             console.log(testConnection);
+                //             setTestConnection("all good");
+                //         } else {
+                //             console.log(testConnection);
+                //             setTestConnection(" problems with server");
+                //         }
+                //     }
+                // ).catch((err) => {
+                //     console.error(err);
+                //     console.log(err);
+                //     setTestConnection("no connection");
+                // });
+            }}></div>
             <div style={{marginTop: '4em'}}>
                 <Formik
                     initialValues={{name: '', password: ''}}
@@ -17,11 +36,11 @@ function Authorization() {
                         //     response => {
                         //         if (response.data === "Success") {
                         //             console.log("login successes");
-                        //             history.push('LandingAuthorization');
-                        //         } else {
-                        //             console.log("wrong user");
-                        //         }
-                        //     }
+                                    history.push('/');
+                            //     } else {
+                            //         console.log("wrong user");
+                            //     }
+                            // }
                         // );
                         }
                     }
@@ -32,17 +51,21 @@ function Authorization() {
                         (props) => (
                             <Form>
                                 <ErrorMessage name="description" component="div"/>
-                                <input className={"inputs-login"}
-                                       type="text"
-                                       name={"name"}
-                                       placeholder={"логин"}
-                                       onChange={props.handleChange}/>
-                                <input className={"inputs-login"}
-                                       type="text"
-                                       name={"password"}
-                                       placeholder={"пароль"}
-                                       onChange={props.handleChange}/>
-                                <button className={"button-confirm"} type="submit">Войти</button>
+                                <div style={{width: '20%', left: '40%', position: 'absolute', top: '40%'}}>
+                                    <input className={"form-control"}
+                                           type="text"
+                                           name={"name"}
+                                           placeholder={"логин"}
+                                           onChange={props.handleChange}/>
+                                    <input className={"form-control"}
+                                           style={{marginTop: '10px'}}
+                                           type="text"
+                                           name={"password"}
+                                           placeholder={"пароль"}
+                                           onChange={props.handleChange}/>
+                                    <button style={{width: '100%', marginTop: '10px'}} className={"btn btn-default"} type="submit">Войти</button>
+                                </div>
+
                             </Form>
                         )
                     }
