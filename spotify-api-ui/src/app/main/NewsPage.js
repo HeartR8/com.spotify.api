@@ -1,9 +1,15 @@
 import './LandingPage.css';
 import React, {useState} from 'react';
+import {useHistory} from "react-router-dom";
 
 function Title(props) {
+    const history = useHistory();
+
+
     return (
-        <h1 className={"title"} onClick={props.handlerClick}>
+        <h1 className={"title"} onClick={()=>{
+            history.push('/');
+        }}>
             {props.text}
         </h1>
     );
