@@ -111,6 +111,8 @@ function NewsPage(props) {
 
     return (
         <div>
+            <div className={"landing-background"}>
+
             <div className={'background-text'}>
                 <Title text={'Spotify'}/>
                 <TagLine text={'Музыка всем и всегда.'}/>
@@ -120,6 +122,7 @@ function NewsPage(props) {
                 </div>
                 <TextPrice textTitle={textTitle3} textLeft={text5} textSubLeft={text6}
                            textRight={text7} textSubRight={text8}/>
+            </div>
             </div>
         </div>
     );
