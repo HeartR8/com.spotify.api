@@ -10,16 +10,18 @@ import RequestUtils from "../../utils/RequestUtils";
 import "./SpotifyApp.css";
 import {useHistory} from "react-router-dom";
 import getUser from './Authorization';
+import {useSelector} from "react-redux";
 
-function LoginButton(props) {
+function LoginButton() {
     const history = useHistory();
+    const user_name = useSelector(state => state.user.name);
 
     return (
         <div style={{position: "absolute", width: '10em', margin: '0.5em 40%'}}>
             <button onClick={() => {
                 history.push('/login');
             }}>
-                {props.user}
+                {user_name}
             </button>
         </div>
     );
@@ -35,7 +37,6 @@ export default class SpotifyApp extends Component {
             loading: false,
             pageSize: 10,
             totalCount: 0,
-            user: 'Login user'
         };
     }
 
@@ -45,7 +46,7 @@ export default class SpotifyApp extends Component {
     render() {
 
         return (<Col className="appContainer">
-                <LoginButton user={this.state.user}/>
+                <LoginButton/>
                 <Row>
                     <Col sm={4} style={{marginBottom: 20}}>
                         <Input loading={this.state.loading} query={this.__q} onChange={this.handleChange}/>

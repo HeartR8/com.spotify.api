@@ -7,16 +7,20 @@ import Authorization from "./app/main/Authorization";
 import NewsPage from "./app/main/NewsPage";
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { Provider } from 'react-redux';
+import store from './app/redux/store';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router>
-            <Switch>
-                <Route exact path={"/news"} component={NewsPage}/>
-                <Route exact path={"/login"} component={Authorization}/>
-                <Route exact path={"/"} component={SpotifyApp}/>
-            </Switch>
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Switch>
+                    <Route exact path={"/news"} component={NewsPage}/>
+                    <Route exact path={"/login"} component={Authorization}/>
+                    <Route exact path={"/"} component={SpotifyApp}/>
+                </Switch>
+            </Router>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );

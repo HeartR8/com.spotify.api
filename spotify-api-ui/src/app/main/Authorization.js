@@ -3,18 +3,12 @@ import {ErrorMessage, Form, Formik} from "formik";
 // import LandingDataService from "../../ServerREST/Landing";
 import React, {useState} from "react";
 import "./SpotifyApp.css";
-
-export function getUser(){
-    let user1 = {
-        name: 'user',
-        password: 'user'
-    }
-
-    return user1;
-}
+import {useSelector} from "react-redux";
 
 function Authorization() {
     const history = useHistory();
+    const user_name = useSelector(state => state.user.name);
+    const user_password = useSelector(state => state.user.password);
 
     const [testUser, setTestUser] = useState("Enter user");
 
@@ -25,9 +19,8 @@ function Authorization() {
                     initialValues={{name: '', password: ''}}
                     onSubmit={
                         (values) => {
-                            let u = getUser();
-                            if (values.name === u.name) {
-                                if (values.password === u.password) {
+                            if (values.name === user_name) {
+                                if (values.password === user_password) {
                                     setTestUser("Success");
                                     history.push('/');
                                 } else {
