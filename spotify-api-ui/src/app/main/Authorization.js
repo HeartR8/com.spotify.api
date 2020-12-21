@@ -1,14 +1,23 @@
 import {useHistory} from "react-router-dom";
-import {ErrorMessage, Form, Formik} from "formik";
+import {Form, Formik} from "formik";
 // import LandingDataService from "../../ServerREST/Landing";
 import React, {useState} from "react";
 import "./SpotifyApp.css";
-import {useSelector} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
+import {setUserName, setUserPassword} from "../redux/userSlice";
+
+function getUser() {
+    return {
+        name: 'user',
+        password: 'user'
+    }
+}
 
 function Authorization() {
     const history = useHistory();
-    const user_name = useSelector(state => state.user.name);
-    const user_password = useSelector(state => state.user.password);
+    const user_name = getUser().name
+    const user_password = getUser().password
+    const dispatch = useDispatch();
 
     const [testUser, setTestUser] = useState("Enter user");
 
@@ -22,6 +31,8 @@ function Authorization() {
                             if (values.name === user_name) {
                                 if (values.password === user_password) {
                                     setTestUser("Success");
+                                    dispatch(setUserName(user_name))
+                                    dispatch(setUserPassword(user_password))
                                     history.push('/');
                                 } else {
                                     setTestUser("Wrong password");

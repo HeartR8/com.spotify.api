@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const pageSlice = createSlice({
     name: 'pageSwitcher',
     initialState: {
-        name: 'userName',
-        password: 'password'
+        name: 'Login',
+        password: 'user'
     },
     reducers: {
         setUserName: (state, action) => {
